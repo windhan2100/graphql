@@ -1,0 +1,27 @@
+#查询入口
+type Query {
+    ####### Author相关 #########
+    findAuthorById(id:Long!): Author
+
+    findAllAuthors: [Author]!
+
+    countAuthors: Long!
+
+    ####### Book相关 #########
+    findAllBooks: [Book]!
+    countBooks: Long!
+    findBookById(id:Long!): Book
+
+    #### 测试枚举 ####
+    testEnum(country: CountryEnum!): String!
+
+}
+
+type Mutation {
+    newAuthor(firstName: String!,lastName: String!) : Author!
+
+    newBook(title: String!,isbn: String!,pageCount: Int, authorId: Long!) : Book!
+    saveBook(input: BookInput!) : Book!
+    deleteBook(id: ID!) : Boolean
+    updateBookPageCount(pageCount: Int!, id:Long!) : Book!
+}

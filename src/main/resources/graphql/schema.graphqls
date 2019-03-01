@@ -1,0 +1,27 @@
+type Author {
+    id: Long!
+    createdTime: String
+    firstName: String
+    lastName: String
+    books: [Book]
+}
+
+input BookInput {
+    title: String!
+    isbn: String!
+    pageCount: Int
+    authorId: Long
+}
+
+type Book {
+    id: Long!
+    title: String!
+    isbn: String!
+    pageCount: Int
+    author: Author
+}
+
+enum CountryEnum {
+    CHINA
+    USA
+}
