@@ -24,4 +24,7 @@ type Mutation {
     saveBook(input: BookInput!) : Book!
     deleteBook(id: ID!) : Boolean
     updateBookPageCount(pageCount: Int!, id:Long!) : Book!
+
+    #### user相关 ####
+    createUser(name: String!, authData:AuthData!): CreateUserResult!
 }

@@ -19,9 +19,31 @@ type Book {
     isbn: String!
     pageCount: Int
     author: Author
+    price: Float
 }
 
 enum CountryEnum {
     CHINA
     USA
+}
+
+######## user 相关 ############
+type User {
+    id: Long!
+    name: String!
+    age: Int!
+    email: String!
+}
+input AuthData {
+    age: Int!
+    email: String!
+}
+
+union CreateUserResult = CreatedUser | ErrorContainer
+
+type CreatedUser {
+    user: User!
+}
+type ErrorContainer {
+    messages:[String!]!
 }
