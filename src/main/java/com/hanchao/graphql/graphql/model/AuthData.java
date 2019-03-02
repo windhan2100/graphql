@@ -10,6 +10,6 @@ import lombok.Data;
  */
 @Data
 public class AuthData {
-    private Integer age;
+    private String pwd;
     private String email;
 }

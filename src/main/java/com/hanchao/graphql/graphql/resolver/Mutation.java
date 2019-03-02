@@ -70,8 +70,8 @@ public class Mutation implements GraphQLMutationResolver {
             return new ErrorContainer(Stream.of("The user already exists.").collect(Collectors.toList()));
         } else {
             User user = new User();
-            user.setAge(authData.getAge());
-            user.setEmail("hanchaohan@126.com");
+            user.setPwd(authData.getPwd());
+            user.setEmail(authData.getEmail());
             user.setName(name);
             return new CreatedUser(userRepo.save(user));
         }

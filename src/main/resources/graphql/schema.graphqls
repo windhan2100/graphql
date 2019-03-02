@@ -31,11 +31,12 @@ enum CountryEnum {
 type User {
     id: Long!
     name: String!
-    age: Int!
+    age: Int
     email: String!
+    pwd:String!
 }
 input AuthData {
-    age: Int!
+    pwd: String!
     email: String!
 }
 

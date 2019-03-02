@@ -27,4 +27,5 @@ type Mutation {
 
     #### user相关 ####
     createUser(name: String!, authData:AuthData!): CreateUserResult!
+
 }
