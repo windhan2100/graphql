@@ -28,4 +28,6 @@ type Mutation {
     #### user相关 ####
     createUser(name: String!, authData:AuthData!): CreateUserResult!
 
+    ### 使用user验证登录 ###
+    login(authData: AuthData!): LoginResult!
 }

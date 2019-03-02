@@ -13,6 +13,6 @@ import java.util.List;
  */
 @Data
 @AllArgsConstructor
-public class ErrorContainer implements CreateUserResult {
+public class ErrorContainer implements CreateUserResult,LoginResult {
     private List<String> messages;
 }

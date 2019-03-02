@@ -76,4 +76,16 @@ public class Mutation implements GraphQLMutationResolver {
             return new CreatedUser(userRepo.save(user));
         }
     }
+
+    public LoginResult login(AuthData authData) {
+        String email = authData.getEmail();
+        User user = userRepo.findUserByEmail(email);
+        if ( user == null) {
+            return new ErrorContainer(Stream.of("Unregistered email.").collect(Collectors.toList()));
+        } else if (userRepo.findUserByEmailAndPwd(email,authData.getPwd()) == null) {
+            return new ErrorContainer(Stream.of("Wrong password.").collect(Collectors.toList()));
+        } else {
+           return new LoginPayload(user.getId(),user);
+        }
+    }
 }
