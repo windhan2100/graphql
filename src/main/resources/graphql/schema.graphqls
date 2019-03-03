@@ -1,8 +1,13 @@
 type Author {
+    #作者Id
     id: Long!
+    #创建时间
     createdTime: String
+    #名
     firstName: String
+    #姓
     lastName: String
+    #该作者的所有书籍
     books: [Book]
 }
 
