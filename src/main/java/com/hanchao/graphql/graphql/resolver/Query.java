@@ -6,13 +6,13 @@ import com.hanchao.graphql.graphql.entity.Book;
 import com.hanchao.graphql.graphql.enums.CountryEnum;
 import com.hanchao.graphql.graphql.repo.AuthorRepo;
 import com.hanchao.graphql.graphql.repo.BookRepo;
-import com.hanchao.graphql.graphql.utils.Utils;
+import graphql.relay.Connection;
+import graphql.relay.SimpleListConnection;
 import graphql.schema.DataFetchingEnvironment;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.Optional;
 
 /**
  * @author hanliwei
@@ -54,4 +54,14 @@ public class Query implements GraphQLQueryResolver {
         return country.toString();
     }
 
+    /**
+     * 分页测试
+     * @param first
+     * @param after
+     * @param env
+     * @return
+     */
+    public Connection<Book> books(int first,String after,DataFetchingEnvironment env) {
+        return new SimpleListConnection<>(bookRepo.findAll()).get(env);
+    }
 }

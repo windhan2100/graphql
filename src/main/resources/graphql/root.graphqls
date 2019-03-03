@@ -12,6 +12,9 @@ type Query {
     countBooks: Long!
     findBookById(id:Long!): Book
 
+    #分页#
+    books(first: Int, after: String): BookConnection @connection(for: "Book")
+
     #### 测试枚举 ####
     testEnum(country: CountryEnum!): String!
 

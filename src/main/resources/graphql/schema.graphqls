@@ -56,3 +56,17 @@ type LoginPayload {
     token: Long!
     user: User!
 }
+
+#### 分页 ####
+type PageInfo {
+  hasPreviousPage: Boolean!
+  hasNextPage: Boolean!
+}
+type BookEdge {
+    cursor: String
+    node: Book
+}
+type BookConnection {
+    edges: [BookEdge]
+    pageInfo: PageInfo
+}

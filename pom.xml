@@ -18,26 +18,43 @@
 		<java.version>1.8</java.version>
 		<mysql-connector-java.version>5.1.46</mysql-connector-java.version>
 		<hikaricp.version>2.4.7</hikaricp.version>
+		<kotlin.version>1.3.10</kotlin.version>
 	</properties>
 
 	<dependencies>
-		<!-- graphQL begin-->
+		<!-- graphQL begin
 		<dependency>
 			<groupId>com.graphql-java</groupId>
 			<artifactId>graphql-spring-boot-starter</artifactId>
 			<version>5.0.2</version>
-		</dependency>
-		<!-- 采用面向schema的方式编写GraphQL服务端-->
+		</dependency>-->
+		<!-- 采用面向schema的方式编写GraphQL服务端
 		<dependency>
 			<groupId>com.graphql-java</groupId>
 			<artifactId>graphql-java-tools</artifactId>
 			<version>5.2.4</version>
-		</dependency>
-		<!-- to embed GraphiQL tool -->
+		</dependency>-->
+		<!-- to embed GraphiQL tool
 		<dependency>
 			<groupId>com.graphql-java</groupId>
 			<artifactId>graphiql-spring-boot-starter</artifactId>
 			<version>5.0.2</version>
+		</dependency>-->
+
+		<dependency>
+			<groupId>com.graphql-java-kickstart</groupId>
+			<artifactId>graphql-spring-boot-starter</artifactId>
+			<version>5.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.graphql-java-kickstart</groupId>
+			<artifactId>graphiql-spring-boot-starter</artifactId>
+			<version>5.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.graphql-java-kickstart</groupId>
+			<artifactId>graphql-java-tools</artifactId>
+			<version>5.4.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
