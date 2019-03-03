@@ -18,6 +18,9 @@ type Query {
     #### 测试枚举 ####
     testEnum(country: CountryEnum!): String!
 
+    ### 测试接口 ####
+    getAnimal(name:String!): Animal!
+    animals: [Animal]
 }
 
 type Mutation {

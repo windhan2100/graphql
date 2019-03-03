@@ -1,9 +1,7 @@
 package com.hanchao.graphql.graphql;
 
 import com.coxautodev.graphql.tools.SchemaParserDictionary;
-import com.hanchao.graphql.graphql.model.CreatedUser;
-import com.hanchao.graphql.graphql.model.ErrorContainer;
-import com.hanchao.graphql.graphql.model.LoginPayload;
+import com.hanchao.graphql.graphql.model.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -20,7 +18,9 @@ public class GraphqlApplication {
 	    return new SchemaParserDictionary()
                 .add(CreatedUser.class)
                 .add(ErrorContainer.class)
-				.add(LoginPayload.class);
+				.add(LoginPayload.class)
+				.add(Dog.class)
+				.add(Fish.class);
     }
 
 }

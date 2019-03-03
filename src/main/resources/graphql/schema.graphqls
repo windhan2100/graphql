@@ -75,3 +75,18 @@ type BookConnection {
     edges: [BookEdge]
     pageInfo: PageInfo
 }
+
+### 接口演示 ####
+interface Animal {
+    name: String!
+}
+
+type Fish implements Animal {
+    name: String!
+    tailColor: String!
+}
+
+type Dog implements Animal {
+    name: String!
+    legs: Int!
+}
