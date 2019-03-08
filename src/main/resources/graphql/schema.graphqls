@@ -27,7 +27,15 @@ type Book {
     price: Float
     ### 默认值为CHINA ###
     money(country: CountryEnum = CHINA) : String!
+
+    ### 自定义-标量类型 测试一下 ###
+    updatedTime: Date
+    createdTime: Date
 }
+
+### 自定义-标量类型 测试一下 ###
+scalar Date
+
 
 enum CountryEnum {
     CHINA
