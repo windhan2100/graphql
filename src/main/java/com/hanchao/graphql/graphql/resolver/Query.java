@@ -73,11 +73,6 @@ public class Query implements GraphQLQueryResolver {
         return new SimpleListConnection<>(bookRepo.findAll()).get(env);
     }
 
-    public List<User> findWithTable() {
-        List<User> list = userRepo.findWithTable("user");
-        return list;
-    }
-
     /**
      * @descript: 测试一下接口的使用
      * @auther: hanliwei

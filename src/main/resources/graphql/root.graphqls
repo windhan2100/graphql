@@ -22,8 +22,6 @@ type Query {
     getAnimal(name:String!): Animal!
     animals: [Animal]
 
-    #### 测试 ###
-    findWithTable :[User]
 }
 
 type Mutation {

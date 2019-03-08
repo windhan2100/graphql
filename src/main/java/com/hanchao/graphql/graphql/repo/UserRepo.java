@@ -25,12 +25,4 @@ public interface UserRepo extends JpaRepository<User,Long> {
 
     User findUserByEmailAndPwd(String email,String pwd);
 
-    /**
-     * @descript: 仅仅是为了测试
-     * @auther: hanliwei
-     * @date: 2019/3/7 21:20
-     * @return
-     */
-    @Query(nativeQuery = true,value = " SELECT * FROM user ")
-    List<User> findWithTable(@Param("t") String t);
 }
