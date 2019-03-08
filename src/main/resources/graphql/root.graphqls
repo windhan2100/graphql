@@ -21,6 +21,9 @@ type Query {
     ### 测试接口 ####
     getAnimal(name:String!): Animal!
     animals: [Animal]
+
+    #### 测试 ###
+    findWithTable :[User]
 }
 
 type Mutation {

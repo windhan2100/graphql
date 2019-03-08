@@ -3,12 +3,14 @@ package com.hanchao.graphql.graphql.resolver;
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 import com.hanchao.graphql.graphql.entity.Author;
 import com.hanchao.graphql.graphql.entity.Book;
+import com.hanchao.graphql.graphql.entity.User;
 import com.hanchao.graphql.graphql.enums.CountryEnum;
 import com.hanchao.graphql.graphql.model.Dog;
 import com.hanchao.graphql.graphql.model.Fish;
 import com.hanchao.graphql.graphql.model.Animal;
 import com.hanchao.graphql.graphql.repo.AuthorRepo;
 import com.hanchao.graphql.graphql.repo.BookRepo;
+import com.hanchao.graphql.graphql.repo.UserRepo;
 import graphql.relay.Connection;
 import graphql.relay.SimpleListConnection;
 import graphql.schema.DataFetchingEnvironment;
@@ -29,6 +31,8 @@ public class Query implements GraphQLQueryResolver {
     private AuthorRepo authorRepo;
 
     private BookRepo bookRepo;
+
+    private UserRepo userRepo;
 
     public Author findAuthorById(Long id) {
         return authorRepo.findAuthorById(id);
@@ -67,6 +71,11 @@ public class Query implements GraphQLQueryResolver {
      */
     public Connection<Book> books(int first,String after,DataFetchingEnvironment env) {
         return new SimpleListConnection<>(bookRepo.findAll()).get(env);
+    }
+
+    public List<User> findWithTable() {
+        List<User> list = userRepo.findWithTable("user");
+        return list;
     }
 
     /**
