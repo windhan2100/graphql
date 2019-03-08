@@ -23,7 +23,13 @@ public class BookResolver implements GraphQLResolver<Book> {
         return authorRepo.findAuthorById(book.getAuthorId());
     }
 
-//    public String getPriceNew(CountryEnum country) {
-//        return country.toString();
-//    }
+    public String getMoney(Book book,CountryEnum country) {
+        if (country == CountryEnum.CHINA) {
+            return "¥:" + book.getPrice() * 6;
+        } else if (country == CountryEnum.USA) {
+            return "$:" + book.getPrice();
+        } else {
+            return "free";
+        }
+    }
 }

@@ -25,6 +25,8 @@ type Book {
     pageCount: Int
     author: Author
     price: Float
+    ### 默认值为CHINA ###
+    money(country: CountryEnum = CHINA) : String!
 }
 
 enum CountryEnum {
